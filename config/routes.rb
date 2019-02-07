@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :apartments
   resources :apartments, constraints: ->(request){ !request.format.html? }
   devise_for :users
 
