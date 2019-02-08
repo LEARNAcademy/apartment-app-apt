@@ -3,11 +3,20 @@ import PropTypes from "prop-types"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Apartments from './pages/Apartments'
+import HeaderGuest from './pages/HeaderGuest'
 
 class UnauthenticatedApp extends React.Component {
   render () {
     return (
-      <h1>UnauthenticatedApp</h1>
+      <Router>
+        <div>
+          <HeaderGuest />
+          <p>I am guest page</p>
+          <Switch>
+            <Route path="/guest/apartments" component={Apartments} />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
